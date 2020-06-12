@@ -1,0 +1,234 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+/***********Animations*****************/
+
+@keyframes appear {
+  0% {
+    filter: invert(1) opacity(0);
+  }
+  50% {
+    filter: invert(1) opacity(0.5);
+  }
+  100% {
+    filter: invert(0) opacity(1);
+  }
+}
+/*******************************/
+.NavbarDiv {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #888;
+  z-index: 55;
+  border-bottom: 3px #3c0 solid;
+  box-shadow: 0px 5px 30px;
+
+  display: flex;
+  justify-content: space-around;
+}
+@media only screen and (max-width: 980px) {
+  .NavbarDiv {
+    width: 100%;
+  }
+
+  /* padding: 20px; */
+  .Navlinks {
+    width: 100px;
+    justify-content: center;
+  }
+  .SearchBarandButton {
+    width: 100px;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .NavbarDiv {
+    position: sticky;
+    top: -300px;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  .Navlinks {
+    width: 100%;
+    justify-content: center;
+  }
+  .SearchBarandButton {
+    width: 70%;
+  }
+  .NavButtons {
+    width: 40%;
+    margin: 30px;
+  }
+}
+
+.NavButton {
+  min-width: 60px;
+  height: 40px;
+  background: none;
+  outline: none;
+  border-radius: 7px;
+  border: thin solid white;
+  color: white;
+  font-weight: bold;
+  transition: 300ms;
+}
+.NavButton:hover {
+  color: black;
+  border: thin solid black;
+  margin-top: -3px;
+  margin-bottom: 3px;
+  box-shadow: 5px 5px 5px black;
+}
+.NavButton:hover .SearchButtonIcon {
+  filter: brightness(0);
+}
+
+/*****************************/
+.NavLink {
+  text-decoration: none;
+  color: #ccc;
+  margin: 20px;
+}
+.NavLink:hover {
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.Navlinks {
+  width: 40%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.NavButtons {
+  width: 13%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.SearchBarandButton {
+  width: 25%;
+  align-self: center;
+  display: flex;
+  justify-content: space-around;
+}
+.SearchInput {
+  background: #999;
+  border: none;
+  /* border-radius: 7px; */
+  border-bottom: thin solid white;
+  border-bottom-left-radius: 7px;
+  border-top-right-radius: 7px;
+  outline: none;
+  padding: 5px;
+  color: white;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.SearchButtonIcon {
+  width: 15px;
+  filter: brightness(100);
+}
+
+/**************************************/
+.image {
+  background: url(https://www.tokkoro.com/picsup/2628337-food-4k-full-desktop-wallpaper.jpg)
+    no-repeat;
+  background-size: cover;
+  min-height: 600px;
+  text-align: center;
+  padding: 200px;
+  margin-top: 100px;
+}
+.title {
+  color: white;
+  font-size: 4rem;
+  animation: appear 3s;
+}
+.introduction {
+  font-size: 20px;
+  text-decoration: underline;
+  color: darkslategray;
+  animation: appear 2s 100ms;
+}
+@media only screen and (max-width: 600px) {
+  .image {
+    margin-top: 0;
+    padding: 5px;
+  }
+}
+
+/*******************************/
+.MenuList {
+  background-image: url(https://backgrounds4k.net/wp-content/uploads/2016/05/Fast-Food-backgrounds-4k.jpg);
+
+  background-size: cover;
+  width: 100%;
+  min-height: 600px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.HotFoodSection {
+  position: relative;
+  width: 100%;
+  min-height: 200px;
+  background: #333333ef;
+  box-shadow: 5px 5px 50px black;
+  padding: 50px;
+  display: flex;
+}
+.HotFoodSection > h2 {
+  position: absolute;
+  color: white;
+  text-decoration: underline;
+  top: 20px;
+  left: 40%;
+}
+
+.FoodCard {
+  min-width: 80%;
+  height: 100px;
+  background: #eeeeeeee;
+  border: solid #ccc thin;
+  border-radius: 7px;
+  margin: 20px;
+  display: flex;
+  justify-content: space-around;
+
+  align-items: center;
+
+  animation: appear 2s;
+  transition: 1s;
+}
+/*****************************/
+
+.OrdersList {
+  margin-top: 100px;
+  padding: 50px;
+  background: url(https://images.creativemarket.com/0.1.0/ps/7843653/910/1356/m2/fpnw/wm1/rxit5eep2uxllajdsafqfbdik4yrmudgk8dmssymtfepj2oq5crtdxvvbvbz0fec-.jpg?1582980390&s=283ea34fd65dc3baa6a308545310e13b);
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.OrderListCard {
+  padding: 50px;
+  min-width: 80%;
+  max-width: fit-content;
+  min-height: 600px;
+  background: rgba(255, 255, 255, 0.342);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.OrderedFood {
+  animation: none;
+}

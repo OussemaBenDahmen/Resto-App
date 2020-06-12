@@ -1,0 +1,30 @@
+{
+  "Users": [
+    {
+      "id": 1,
+      "userName": "Oussema",
+      "Address": "09 Rue BlaBla tunis",
+      "userEmail": "example@gmail.com",
+      "password": "0000"
+    }
+  ],
+  "FoodList": [
+    {
+      "id": 1,
+      "name": "Makloub",
+      "category": "Sandwitches",
+      "rating": "Loved",
+      "price": "5.5 TND",
+      "image": "https://media-cdn.tripadvisor.com/media/photo-s/14/79/40/ad/makloub.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Kafteji",
+      "category": "Plate",
+      "rating": "Average",
+      "price": "2 TND",
+      "image": "https://img.huffingtonpost.com/asset/5c1fc40d240000dd0558b34d.png?ops=scalefit_630_noupscale"
+    }
+  ],
+  "Orders": []
+}
