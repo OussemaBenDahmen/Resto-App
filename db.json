@@ -1,11 +1,28 @@
 {
   "Users": [
     {
-      "id": 1,
       "userName": "Oussema",
       "Address": "09 Rue BlaBla tunis",
-      "userEmail": "example@gmail.com",
-      "password": "0000"
+      "userEmail": "admin@garden.co",
+      "password": "0000",
+      "role": "admin",
+      "id": 1
+    },
+    {
+      "userName": "User1",
+      "Address": "Somewhere Close",
+      "userEmail": "User1@gmail.com",
+      "password": "123456789",
+      "role": "Client",
+      "id": 2
+    },
+    {
+      "userName": "User2",
+      "Address": "8 Rue Ben Arous",
+      "userEmail": "User2@gmail.com",
+      "password": "159753",
+      "role": "Client",
+      "id": 3
     }
   ],
   "FoodList": [
@@ -14,17 +31,36 @@
       "name": "Makloub",
       "category": "Sandwitches",
       "rating": "Loved",
-      "price": "5.5 TND",
+      "price": "5.5",
       "image": "https://media-cdn.tripadvisor.com/media/photo-s/14/79/40/ad/makloub.jpg"
     },
     {
       "id": 2,
-      "name": "Kafteji",
+      "name": "The Allmighty Kafteji",
       "category": "Plate",
       "rating": "Average",
-      "price": "2 TND",
+      "price": "20",
       "image": "https://img.huffingtonpost.com/asset/5c1fc40d240000dd0558b34d.png?ops=scalefit_630_noupscale"
     }
   ],
-  "Orders": []
+  "Orders": [
+    {
+      "name": "Makloub",
+      "Price": "5.5",
+      "Qtty": 1,
+      "Client": "Oussema",
+      "ClientssAddress": "09 Rue BlaBla tunis",
+      "image": "https://media-cdn.tripadvisor.com/media/photo-s/14/79/40/ad/makloub.jpg",
+      "id": 1
+    },
+    {
+      "name": "Kafteji",
+      "Price": "2",
+      "Qtty": 1,
+      "Client": "Oussema",
+      "ClientssAddress": "09 Rue BlaBla tunis",
+      "image": "https://img.huffingtonpost.com/asset/5c1fc40d240000dd0558b34d.png?ops=scalefit_630_noupscale",
+      "id": 2
+    }
+  ]
 }

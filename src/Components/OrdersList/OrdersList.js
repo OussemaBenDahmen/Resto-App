@@ -1,4 +1,4 @@
-import React, { useSelector, useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 
 import axios from "axios";
 
@@ -6,6 +6,7 @@ import OrderedFoodItem from "../ReusableComponents/OrderedFoodItem";
 
 export const OdersList = () => {
   const [Orders, setOrders] = useState([]);
+
   let getOrders = () => {
     axios
       .get("http://localhost:4000/Orders")
@@ -13,9 +14,9 @@ export const OdersList = () => {
   };
   useEffect(() => {
     getOrders();
-    
   }, []);
 
+  console.log(Orders);
   return (
     <div className="OrdersList">
       <div className="OrderListCard">
@@ -24,9 +25,7 @@ export const OdersList = () => {
           <OrderedFoodItem Food={el} key={el.id} />
         ))}
         <span>
-          <label htmlFor="Price">Total Price: </label>
-          <input type="text" name="Price" value={Orders.length} />
-         
+          <input type="text" name="Price" value={`Total Price: `}></input>
         </span>
       </div>
     </div>
