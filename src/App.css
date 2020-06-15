@@ -28,18 +28,27 @@
   display: flex;
   justify-content: space-around;
 }
-@media only screen and (max-width: 980px) {
+@media only screen and (max-width: 975px) {
   .NavbarDiv {
     width: 100%;
+    justify-content: space-evenly;
   }
 
   /* padding: 20px; */
   .Navlinks {
-    width: 100px;
+    width: 20%;
     justify-content: center;
   }
   .SearchBarandButton {
-    width: 100px;
+    width: 30%;
+    justify-self: center;
+  }
+  .SearchInput {
+    width: 60%;
+  }
+  .NavButtons {
+    width: 40%;
+    margin: 30px;
   }
 }
 @media only screen and (max-width: 600px) {
@@ -58,6 +67,9 @@
   }
   .SearchBarandButton {
     width: 70%;
+  }
+  .SearchInput {
+    width: auto;
   }
   .NavButtons {
     width: 40%;
@@ -179,11 +191,12 @@
 .HotFoodSection {
   position: relative;
   width: 100%;
-  min-height: 200px;
+  min-height: 400px;
   background: #333333ef;
   box-shadow: 5px 5px 50px black;
   padding: 50px;
   display: flex;
+  overflow: scroll;
 }
 .HotFoodSection > h2 {
   position: absolute;
@@ -191,6 +204,9 @@
   text-decoration: underline;
   top: 20px;
   left: 40%;
+}
+.HotFoodSection .FoodCard {
+  width: 600px;
 }
 
 .FoodCard {
@@ -250,7 +266,8 @@
 }
 
 /*****************************/
-.Login-SignupBacground {
+.Login-SignupBacground,
+.AddFormBackground {
   position: fixed;
   top: 0;
   width: 100vw;
@@ -281,4 +298,17 @@
   border-bottom: lime thin solid;
   outline: none;
   padding: 5px;
+}
+.AddFoodForm {
+  z-index: 1846;
+  width: fit-content;
+  padding: 50px;
+  min-height: 400px;
+  border: solid thin black;
+  border-radius: 7px;
+  box-shadow: 5px 5px 30px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
 }

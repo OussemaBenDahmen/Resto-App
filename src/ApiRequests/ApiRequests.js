@@ -6,6 +6,7 @@ import LogInAction from "../Actions/LoginModalAction/LogInAction";
 import LoginModalCloseAction from "../Actions/LoginModalAction/LoginModalCloseAction";
 import SignUpAction from "../Actions/SignUpModalAction/SignUpAction";
 import SignUpModalCloseAction from "../Actions/SignUpModalAction/SignupModalClose";
+import GetOrderAction from "../Actions/OrdersActions/GetOrder";
 
 export function GetUserFromApi() {
   return (dispatch) =>
@@ -40,6 +41,12 @@ export function AddFoodToCartApi(Order, index) {
       }
     });
 }
+export function GetOrdersApi() {
+  return (dispatch) =>
+    axios.get("http://localhost:4000/Orders").then((res) => {
+      dispatch(GetOrderAction(res.data));
+    });
+}
 
 export function DeleteOrderApi(index) {
   return (dispatch) =>
@@ -66,7 +73,7 @@ export function IncrementApi(Order, index) {
   };
 }
 export function DecrementApi(Order, index) {
-  return () => {
+  return (dispatch) => {
     if (Order.Qtty > 1) {
       let PrevQty;
       axios.get("http://localhost:4000/Orders").then((res) => {
@@ -81,9 +88,9 @@ export function DecrementApi(Order, index) {
           .then(() => window.location.reload());
       });
     } else {
-      axios
-        .delete(`http://localhost:4000/Orders/${index}`)
-        .then(() => window.location.reload());
+      axios.delete(`http://localhost:4000/Orders/${index}`).then(() => {
+        window.location.reload();
+      });
     }
   };
 }
@@ -95,10 +102,10 @@ export function EditFoodApi(Food) {
       .then(() => window.location.reload(false));
 }
 export function DeleteFoodApi(index) {
-  return () =>
-    axios
-      .delete(`http://localhost:4000/FoodList/${index}`)
-      .then(() => window.location.reload(true));
+  return (dispatch) =>
+    axios.delete(`http://localhost:4000/FoodList/${index}`).then(() => {
+      window.location.reload(true);
+    });
 }
 export function LogInApi(User) {
   return (dispatch) =>
@@ -114,7 +121,8 @@ export function LogInApi(User) {
           let ConnectedUser = res.data.filter(
             (el) => el.userEmail === User.Email && el.password === User.Password
           );
-          console.log(ConnectedUser);
+          console.log(ConnectedUser[0]);
+          localStorage.setItem("Connected", ConnectedUser[0].userName);
           dispatch(GetUserAction(ConnectedUser[0]));
         });
       }
@@ -128,4 +136,23 @@ export function SignUpApi(Client) {
       dispatch(LogInAction());
       dispatch(GetUserAction(Client));
     });
+}
+
+export function AddFoodApi(Food) {
+  return (dispatch) => {
+    axios.post("http://localhost:4000/FoodList", Food).then(() => {
+      alert(`${Food.name} is added to the FoodList`);
+    });
+  };
+}
+export function RefrechPersistLogin(User) {
+  return (dispatch) => {
+    if (User !== "") {
+      axios.get("http://localhost:4000/Users").then((res) => {
+        let account = res.data.filter((el) => el.userName === User);
+        dispatch(GetUserAction(account[0]));
+        dispatch(LogInAction());
+      });
+    }
+  };
 }

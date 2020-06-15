@@ -12,7 +12,6 @@ const FoodItem = (props) => {
   let dispatch = useDispatch();
 
   let User = useSelector((state) => state.user);
-  const isLogged = useSelector((state) => state.isLogged);
   let Order = {
     name: props.Food.name,
     Price: props.Food.price,
@@ -28,7 +27,13 @@ const FoodItem = (props) => {
       <p>{props.Food.name}</p>
       <p>{props.Food.price} TND</p>
       {User.role === "admin" ? (
-        <div>
+        <div
+          style={{
+            width: "30%",
+            display: "flex",
+            justifyContent: "space-evenly",
+          }}
+        >
           <button onClick={() => setModalShow(true)}>
             <img
               src="https://icons-for-free.com/iconfiles/png/512/compose+draw+edit+write+icon-1320196706045580276.png"
@@ -41,13 +46,13 @@ const FoodItem = (props) => {
           </button>
         </div>
       ) : null}
-      {isLogged && (
+      {User.role === "Client" ? (
         <button
           onClick={() => dispatch(AddFoodToCartApi(Order, props.Food.id))}
         >
           Order
         </button>
-      )}
+      ) : null}
       {ModalShow ? (
         <EditModal FoodItem={props.Food} CloseModal={CloseModal} />
       ) : null}

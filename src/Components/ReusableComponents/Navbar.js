@@ -52,7 +52,10 @@ const Navbar = () => {
         <div className="NavButtons">
           <button
             className="NavButton"
-            onClick={() => dispatch(LogOutAction())}
+            onClick={() => {
+              dispatch(LogOutAction());
+              localStorage.setItem("Connected", "");
+            }}
           >
             LogOut
           </button>

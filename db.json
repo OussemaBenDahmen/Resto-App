@@ -3,7 +3,7 @@
     {
       "userName": "Oussema",
       "Address": "09 Rue BlaBla tunis",
-      "userEmail": "admin@garden.co",
+      "userEmail": "admin@gardens.co",
       "password": "0000",
       "role": "admin",
       "id": 1
@@ -27,20 +27,28 @@
   ],
   "FoodList": [
     {
-      "id": 1,
       "name": "Makloub",
       "category": "Sandwitches",
       "rating": "Loved",
       "price": "5.5",
-      "image": "https://media-cdn.tripadvisor.com/media/photo-s/14/79/40/ad/makloub.jpg"
+      "image": "https://media-cdn.tripadvisor.com/media/photo-s/14/79/40/ad/makloub.jpg",
+      "id": 1
     },
     {
-      "id": 2,
       "name": "The Allmighty Kafteji",
       "category": "Plate",
       "rating": "Average",
       "price": "20",
-      "image": "https://img.huffingtonpost.com/asset/5c1fc40d240000dd0558b34d.png?ops=scalefit_630_noupscale"
+      "image": "https://img.huffingtonpost.com/asset/5c1fc40d240000dd0558b34d.png?ops=scalefit_630_noupscale",
+      "id": 2
+    },
+    {
+      "name": "Brik",
+      "category": "Fried",
+      "rating": "Loved",
+      "price": "2",
+      "image": "https://www.baya.tn/wp-content/uploads/2014/06/cuisine-brik-thon.jpg",
+      "id": 3
     }
   ],
   "Orders": [
@@ -54,13 +62,31 @@
       "id": 1
     },
     {
-      "name": "Kafteji",
+      "name": "Brik",
       "Price": "2",
       "Qtty": 1,
       "Client": "Oussema",
       "ClientssAddress": "09 Rue BlaBla tunis",
-      "image": "https://img.huffingtonpost.com/asset/5c1fc40d240000dd0558b34d.png?ops=scalefit_630_noupscale",
+      "image": "https://media-cdn.tripadvisor.com/media/photo-s/14/79/40/ad/makloub.jpg",
       "id": 2
+    },
+    {
+      "name": "Brik",
+      "Price": "2",
+      "Qtty": 9,
+      "Client": "User1",
+      "ClientssAddress": "Somewhere Close",
+      "image": "https://media-cdn.tripadvisor.com/media/photo-s/14/79/40/ad/makloub.jpg",
+      "id": 3
+    },
+    {
+      "name": "Makloub",
+      "Price": "5.5",
+      "Qtty": 7,
+      "Client": "User1",
+      "ClientssAddress": "Somewhere Close",
+      "image": "https://media-cdn.tripadvisor.com/media/photo-s/14/79/40/ad/makloub.jpg",
+      "id": 4
     }
   ]
 }

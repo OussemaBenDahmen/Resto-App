@@ -2,12 +2,17 @@ import React, { useEffect } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./App.css";
 import { useDispatch, useSelector } from "react-redux";
-import { GetFoodListFromApi, GetUserFromApi } from "./ApiRequests/ApiRequests";
+import {
+  GetFoodListFromApi,
+  RefrechPersistLogin,
+} from "./ApiRequests/ApiRequests";
 import MainPage from "./Components/MainPage";
 import Navbar from "./Components/ReusableComponents/Navbar";
 import OrdersList from "./Components/OrdersList/OrdersList";
 import LogIn from "./Components/LogIn-SignUp/LogIn";
 import SignUp from "./Components/LogIn-SignUp/SignUp";
+import AddFoodForm from "./Components/AddFoodForm";
+import ListOfOrders from "./Components/ListOfOrders/ListOfOrders";
 function App() {
   const LogInModalShow = useSelector((state) => state.isLoginModalOpen);
   const SignUpModalShow = useSelector((state) => state.isSignupModalOpen);
@@ -15,7 +20,9 @@ function App() {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(GetFoodListFromApi());
-  });
+    let User = localStorage.getItem("Connected");
+    dispatch(RefrechPersistLogin(User));
+  }, [dispatch]);
 
   return (
     <div className="App">
@@ -28,9 +35,13 @@ function App() {
             </Route>
             <Route path="/Fav"></Route>
             <Route path="/Card">
-              <Route path="/OrderList">OrderList</Route>
-              <Route path="/AddFood">AddFood</Route>
               <OrdersList />
+            </Route>
+            <Route path="/OrderList">
+              <ListOfOrders />
+            </Route>
+            <Route path="/AddFood">
+              <AddFoodForm />
             </Route>
           </Switch>
         </div>

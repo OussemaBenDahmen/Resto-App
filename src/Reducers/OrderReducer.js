@@ -1,5 +1,5 @@
 let OrderReducer = (state = [], action) => {
-  if (action.type === "ORDER") {
+  if (action.type === "ORDER" || action.type === "GET_ORDERS") {
     return [...state, action.payload];
   }
   return state;
