@@ -48,7 +48,7 @@ const FoodItem = (props) => {
       ) : null}
       {User.role === "Client" ? (
         <button
-          onClick={() => dispatch(AddFoodToCartApi(Order, props.Food.id))}
+          onClick={() => dispatch(AddFoodToCartApi(Order, props.Food.id,User))}
         >
           Order
         </button>

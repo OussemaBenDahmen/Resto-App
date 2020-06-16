@@ -8,15 +8,15 @@ export const OrderedFoodItem = (props) => {
   //let user = useSelector((state) => state.user);
 
   return (
-    <div className="FoodCard OrderedFood" key={props.Food.id}>
-      <img src={props.Food.image} alt="" width="100px" />
-      <p>{props.Food.name}</p>
-      <p>{props.Food.Price} TND</p>
+    <div className="FoodCard OrderedFood" key={props.FoodItem.id}>
+      <img src={props.FoodItem.image} alt="" width="100px" />
+      <p>{props.FoodItem.name}</p>
+      <p>{props.FoodItem.Price} TND</p>
       <label htmlFor="Qtty">Quantity</label>
       <input
         type="text"
         name="Qtty"
-        value={props.Food.Qtty}
+        value={props.FoodItem.Qtty}
         style={{ width: "30px", textAlign: "center" }}
       />
       <button onClick={() => dispatch(IncrementApi(props.Food, props.Food.id))}>

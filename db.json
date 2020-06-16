@@ -23,6 +23,14 @@
       "password": "159753",
       "role": "Client",
       "id": 3
+    },
+    {
+      "userName": "User3",
+      "Address": "21 jump street",
+      "userEmail": "User3@gmail.com",
+      "password": "123123",
+      "role": "Client",
+      "id": 4
     }
   ],
   "FoodList": [
@@ -56,37 +64,28 @@
       "name": "Makloub",
       "Price": "5.5",
       "Qtty": 1,
-      "Client": "Oussema",
-      "ClientssAddress": "09 Rue BlaBla tunis",
+      "Client": "User1",
+      "ClientssAddress": "Somewhere Close",
       "image": "https://media-cdn.tripadvisor.com/media/photo-s/14/79/40/ad/makloub.jpg",
       "id": 1
     },
     {
-      "name": "Brik",
-      "Price": "2",
-      "Qtty": 1,
-      "Client": "Oussema",
-      "ClientssAddress": "09 Rue BlaBla tunis",
-      "image": "https://media-cdn.tripadvisor.com/media/photo-s/14/79/40/ad/makloub.jpg",
-      "id": 2
-    },
-    {
-      "name": "Brik",
-      "Price": "2",
-      "Qtty": 9,
+      "name": "The Allmighty Kafteji",
+      "Price": "20",
+      "Qtty": 3,
       "Client": "User1",
       "ClientssAddress": "Somewhere Close",
-      "image": "https://media-cdn.tripadvisor.com/media/photo-s/14/79/40/ad/makloub.jpg",
-      "id": 3
+      "image": "https://img.huffingtonpost.com/asset/5c1fc40d240000dd0558b34d.png?ops=scalefit_630_noupscale",
+      "id": 2
     },
     {
       "name": "Makloub",
       "Price": "5.5",
-      "Qtty": 7,
-      "Client": "User1",
-      "ClientssAddress": "Somewhere Close",
+      "Qtty": 1,
+      "Client": "User2",
+      "ClientssAddress": "8 Rue Ben Arous",
       "image": "https://media-cdn.tripadvisor.com/media/photo-s/14/79/40/ad/makloub.jpg",
-      "id": 4
+      "id": 3
     }
   ]
 }

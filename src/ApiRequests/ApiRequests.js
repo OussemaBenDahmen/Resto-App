@@ -22,23 +22,51 @@ export function GetFoodListFromApi() {
     });
 }
 
-export function AddFoodToCartApi(Order, index) {
+export function AddFoodToCartApi(Order, index, user) {
   return () =>
     axios.get("http://localhost:4000/Orders").then((res) => {
-      if (res.data.every((el) => el.name !== Order.name)) {
+      if (
+        res.data
+          .filter((el) => el.Client === user.userName)
+          .every((el) => el.name !== Order.name)
+      ) {
         axios.post(`http://localhost:4000/Orders`, Order);
-      } else {
+      } else if (
+        res.data
+          .filter((el) => el.Client === user.userName)
+          .every((el) => el.name === Order.name)
+      ) {
         let PrevQty;
+        let id;
         axios.get("http://localhost:4000/Orders").then((res) => {
+          id = res.data
+            .filter((el) => el.Client === user.userName)
+            .indexOf((el) => el === Order);
+          console.log(id);
           if (res.data.length > 1) {
-            PrevQty = res.data[index - 1].Qtty;
+            PrevQty = res.data[id].Qtty;
           } else {
             PrevQty = res.data[0].Qtty;
           }
           Order.Qtty = PrevQty + 1;
-          axios.put(`http://localhost:4000/Orders/${index}`, Order);
+          console.log(PrevQty);
+          axios.put(`http://localhost:4000/Orders/${id - 1}`, Order);
         });
       }
+      // if (res.data.every((el) => el.name !== Order.name)) {
+      //   axios.post(`http://localhost:4000/Orders`, Order);
+      // } else {
+      //   let PrevQty;
+      //   axios.get("http://localhost:4000/Orders").then((res) => {
+      //     if (res.data.length > 1) {
+      //       PrevQty = res.data[index - 1].Qtty;
+      //     } else {
+      //       PrevQty = res.data[0].Qtty;
+      //     }
+      //     Order.Qtty = PrevQty + 1;
+      //     axios.put(`http://localhost:4000/Orders/${index}`, Order);
+      //   });
+      // }
     });
 }
 export function GetOrdersApi() {
